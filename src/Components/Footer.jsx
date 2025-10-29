@@ -9,7 +9,7 @@ import { CiFacebook } from "react-icons/ci";
 function Footer() {
   return (
     <div style={{height:"300px",width:"100vw",backgroundColor:"yellowgreen"}} className='text-white d-flex flex-column justify-content-center align-items-center'>
-        <h4>Contact Us</h4>
+        <h3>Contact Us</h3>
         <h5><CiMail /> Careercraft@gmail.com</h5>
         <h5><FaPhoneAlt /> 9633033031</h5>
         <h4>Connect With Us</h4>
@@ -18,7 +18,7 @@ function Footer() {
           <CiInstagram />
           <CiFacebook />
         </div>
-        <p className='my-3'>Made using REACT</p>
+        <p className='my-3'>Made using REACT and ❤️</p>
     </div>
   )
 }

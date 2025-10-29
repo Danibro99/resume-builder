@@ -3,7 +3,7 @@ import React from 'react'
 Divider
 function Preview() {
   return (
-    <div style={{marginTop:"70px"}} className='text-center w-100 rounded shadow p-5'>
+    <div  className='text-center w-100 rounded shadow p-5'>
       <h3>name</h3>
       <h5>Job-title</h5>
       <p ><span className='mx-2'>Location</span>|<span className='mx-2'>e-mail</span>|<span className='mx-2'>phone number</span></p>

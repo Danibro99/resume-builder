@@ -26,7 +26,7 @@ function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to={"/"} className='text-light text-decoration-none'>CareerCraft</Link>
           </Typography>
-          <Tooltip title={projectInfo}><Button color="inherit">About</Button></Tooltip>
+          <Tooltip sx={{textAlign:"justify"}} title={projectInfo}><Button color="inherit">About</Button></Tooltip>
         </Toolbar>
       </AppBar>
     </Box></div>

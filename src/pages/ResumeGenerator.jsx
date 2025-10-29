@@ -21,7 +21,7 @@ function ResumeGenerator() {
         <h5>Step 2</h5>
       </div>
       </div>
-      <div className='d-flex justify-content-center align-items-center ms-5 mb-4'>
+      <div className='d-flex justify-content-center align-items-center mb-4'>
         <Link to={'/form'} className="btn text-white" style={{backgroundColor:"yellowgreen"}}>Start</Link>
         </div>
     </div>
