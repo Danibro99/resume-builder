@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { ImCancelCircle } from "react-icons/im";
+import { useRef } from 'react';
 
 
 const steps = ['Basic Information', 'Contact Details', 'Educational Details','Work Experience','Skills and Experience','Review and Submit'];
@@ -33,10 +34,27 @@ function UserInput() {
     compName:"",
     cLocation:"",
     duration:"",
-    skills:[],
+    userSkills:[],
     summary:""
   })
+  
+  const skillInputRef=useRef()
+
+  const addSkill=(skill)=>{
+    if(resumeData.userSkills.includes(skill)){
+      alert("The given skill already exists.Enter another one")
+    }else{
+      setResumeData({...resumeData,userSkills:[...resumeData.userSkills,skill]})
+      skillInputRef.current.value=""
+    }
+  }
+
+  const removeskill=(skill)=>{
+    setResumeData({...resumeData,userSkills:resumeData.userSkills.filter(item=>item!=skill)})
+  }
+
   console.log(resumeData);
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -95,7 +113,7 @@ function UserInput() {
             )
         case 1:
             return(
-                <div>user
+                <div>
                   <h3>Contact Details</h3>
                   <div className="row p-3">
                       <TextField value={resumeData.email} onChange={e=>{setResumeData({...resumeData,email:e.target.value})}} id="userEmail" label="E-mail" variant="standard" />
@@ -135,20 +153,26 @@ function UserInput() {
                 <div>
                   <h3>Skills and Experience</h3>
                   <div className="d-flex justify-content-between align-items-center p-3">
-                    <TextField id="outlined-basic" label="Skill" variant="outlined" className='w-100' />
-                    <Button type='button'>ADD</Button>
+                    <TextField id="skill-input" inputRef={skillInputRef} label="Skill" variant="outlined" className='w-100' />
+                    <Button onClick={()=>{addSkill(skillInputRef.current.value)}} type='button'>ADD</Button>
                   </div>
                   <h3>Suggestions:</h3>
                   <div className="d-flex flex-wrap justify-content-between my-3">
                     {
                       skillSuggest.map((item,index) => (
-                        <Button key={index} variant="outlined" className="m-1">{item}</Button>
+                        <Button key={index} onClick={()=>addSkill(item)} variant="outlined" className="m-1">{item}</Button>
                       ))
                     }
                   </div>
                   <h3>Added Skills:</h3>
                   <div className="d-flex flex-wrap justify-content-between my-3">
-                        <Button variant="contained" className="m-1">Node <ImCancelCircle  className='ms-2'/></Button>
+                        {
+                          resumeData.userSkills?.length>0?
+                          resumeData.userSkills.map((skill,index)=>(
+                            <Button key={index} variant="contained" className="m-1">{skill} <ImCancelCircle onClick={()=>removeskill(skill)} className='ms-2'/></Button>
+                          )):
+                          <p className='fw-bolder'>No skills are added yet!!!</p>
+                        }
                   </div>
                   </div>
             )

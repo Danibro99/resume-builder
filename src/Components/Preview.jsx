@@ -1,6 +1,7 @@
 import { Button, Divider } from '@mui/material'
 import React from 'react'
-Divider
+
+
 function Preview() {
   return (
     <div  className='text-center w-100 rounded shadow p-5'>
