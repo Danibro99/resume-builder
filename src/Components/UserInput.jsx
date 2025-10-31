@@ -23,7 +23,7 @@ function UserInput({resumeData,setResumeData}) {
       alert("The given skill already exists.Enter another one")
     }else{
       setResumeData({...resumeData,userSkills:[...resumeData.userSkills,skill]})
-      skillInputRef.current.value=""
+      // skillInputRef.current.value=""
     }
   }
 
