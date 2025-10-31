@@ -11,7 +11,7 @@ function App() {
 
   return (
     <> 
-    <Header></Header>
+    <Header/>
       <Routes>
         <Route path='/' element={<LandingPage/>}></Route>
         <Route path='/form' element={<Form/>}></Route>
@@ -19,7 +19,7 @@ function App() {
         <Route path='/resume' element={<ResumeGenerator/>}></Route>
         <Route path='/*' element={<Pnf/>}></Route>
       </Routes>
-      <Footer></Footer>
+      <Footer/>
     </>
   )
 }

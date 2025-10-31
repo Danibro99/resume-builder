@@ -12,32 +12,10 @@ import { useRef } from 'react';
 
 const steps = ['Basic Information', 'Contact Details', 'Educational Details','Work Experience','Skills and Experience','Review and Submit'];
 
-function UserInput() {
+function UserInput({resumeData,setResumeData}) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-  const skillSuggest=['NODE JS','PYTHON','REACT','BOOTSTRAP','EXPRESS JS','HARDWORKING','EFFCIENT','MONGO DB','TAILWIND','CSS']
-  //state for storing userResume data
-  const [resumeData,setResumeData]=React.useState({
-    username:"",
-    jobtitle:"",
-    userLocation:"",
-    email:"",
-    phone:"",
-    github:"",
-    portfolio:"",
-    linkedin:"",
-    course:"",
-    college:"",
-    university:"",
-    passoutyear:"",
-    jobtype:"",
-    compName:"",
-    cLocation:"",
-    duration:"",
-    userSkills:[],
-    summary:""
-  })
-  
+  const skillSuggest=['NODE JS','PYTHON','REACT','BOOTSTRAP','EXPRESS JS','HARDWORKING','EFFICIENT','MONGO DB','TAILWIND','CSS']
   const skillInputRef=useRef()
 
   const addSkill=(skill)=>{

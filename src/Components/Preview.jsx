@@ -2,10 +2,10 @@ import { Button, Divider } from '@mui/material'
 import React from 'react'
 
 
-function Preview() {
+function Preview({resumeData}) {
   return (
     <div  className='text-center w-100 rounded shadow p-5'>
-      <h3>name</h3>
+      <h3 >name</h3>
       <h5>Job-title</h5>
       <p ><span className='mx-2'>Location</span>|<span className='mx-2'>e-mail</span>|<span className='mx-2'>phone number</span></p>
       <p className='my-1'><a href="" className='mx-1' target='_blank'>GITHUB</a>|<a href="" target='_blank' className='mx-1'>LINKEDIN</a>|<a href="" target='_blank' className='mx-1'>PORTFOLIO</a></p>
