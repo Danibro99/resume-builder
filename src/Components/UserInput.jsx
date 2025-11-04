@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { ImCancelCircle } from "react-icons/im";
 import { useRef } from 'react';
+import { addResumeAPI } from '../services/AllAPI';
 
 
 const steps = ['Basic Information', 'Contact Details', 'Educational Details','Work Experience','Skills and Experience','Review and Submit'];
@@ -167,6 +168,16 @@ function UserInput({resumeData,setResumeData}) {
             return null
     }
   }
+
+  const handleAddResume=async ()=>{
+    const {username,jobtitle,userLocation}=resumeData
+    if(!username || !jobtitle || !userLocation){
+      alert("Please fill the form completely")
+    }else{
+      console.log("API Call!!");
+
+    }
+  }
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
@@ -219,9 +230,9 @@ function UserInput({resumeData,setResumeData}) {
                 Skip
               </Button>
             )}
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </Button>
+            {activeStep === steps.length - 1 ? 
+            <Button onClick={handleAddResume}>Finish</Button> :
+            <Button onClick={handleNext}>Next</Button>}
           </Box>
         </React.Fragment>
       )}
