@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import { ImCancelCircle } from "react-icons/im";
 import { useRef } from 'react';
 import { addResumeAPI } from '../services/AllAPI';
+import { useNavigate } from 'react-router-dom';
 
 
 const steps = ['Basic Information', 'Contact Details', 'Educational Details','Work Experience','Skills and Experience','Review and Submit'];
@@ -18,6 +19,8 @@ function UserInput({resumeData,setResumeData}) {
   const [skipped, setSkipped] = React.useState(new Set());
   const skillSuggest=['NODE JS','PYTHON','REACT','BOOTSTRAP','EXPRESS JS','HARDWORKING','EFFICIENT','MONGO DB','TAILWIND','CSS']
   const skillInputRef=useRef()
+  //to navigate from one page to another
+  const navigate=useNavigate()
 
   const addSkill=(skill)=>{
     if(resumeData.userSkills.includes(skill)){
@@ -169,13 +172,25 @@ function UserInput({resumeData,setResumeData}) {
     }
   }
 
-  const handleAddResume=async ()=>{
+  const handleAddResume = async ()=>{
     const {username,jobtitle,userLocation}=resumeData
     if(!username || !jobtitle || !userLocation){
       alert("Please fill the form completely")
     }else{
       console.log("API Call!!");
-
+      try{
+        const result=await addResumeAPI(resumeData)
+        console.log(result);
+        if(result.status==201){
+          alert("Resume Added Successfully")
+          const {id}=result.data
+          //redirect to view page
+          navigate(`/resume/${id}/view`)
+        }
+      }
+      catch(err){
+        console.log(err);
+      }
     }
   }
   return (

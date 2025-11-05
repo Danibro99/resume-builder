@@ -21,7 +21,7 @@ function Header() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-          <img style={{height:"40px"}} src="headerlog.png"alt="" />
+          <img style={{height:"40px"}} src="/headerlog.png"alt="Logo" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to={"/"} className='text-light text-decoration-none'>CareerCraft</Link>

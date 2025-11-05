@@ -20,7 +20,7 @@ function Preview({resumeData}) {
       <Divider sx={{fontSize:"25px",}}>Skills</Divider>
       <div className="d-flex flex-wrap justify-content-between my-3">
         {
-          resumeData.userSkills?.map((skill,index)=>(<Button key={index} variant="contained" className="m-1">{skill}</Button>
+          resumeData?.userSkills?.map((skill,index)=>(<Button key={index} variant="contained" className="m-1">{skill}</Button>
         ))}
       </div>
     </div>
