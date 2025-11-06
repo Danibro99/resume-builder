@@ -16,7 +16,7 @@ function Preview({resumeData}) {
       <p><span className='mx-2'>{resumeData?.college}</span>|<span className='mx-2'>{resumeData?.university}</span>|<span className='mx-2'>{resumeData?.passoutyear}</span></p>
       <Divider sx={{fontSize:"25px",}}>Professional Experience</Divider>
       <h5>{resumeData?.jobtype}</h5>
-      <p><span className='mx-2'>{resumeData?.compname}</span>|<span className='mx-2'>{resumeData?.cLocation}</span>|<span className='mx-2'>{resumeData?.duration}</span></p>
+      <p><span className='mx-2'>{resumeData?.compName}</span>|<span className='mx-2'>{resumeData?.cLocation}</span>|<span className='mx-2'>{resumeData?.duration}</span></p>
       <Divider sx={{fontSize:"25px",}}>Skills</Divider>
       <div className="d-flex flex-wrap justify-content-between my-3">
         {
