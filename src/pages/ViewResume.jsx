@@ -38,7 +38,6 @@ function ViewResume() {
       await addHistoryAPI({timeStamp,resumeImg})
     }catch(err){
       console.log(err);
-      
     }
   }
 

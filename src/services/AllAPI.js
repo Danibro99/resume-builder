@@ -1,4 +1,3 @@
-import { AiFillPrinter } from "react-icons/ai";
 import commonAPI from "./commonAPI";
 import serverURL from "./serverurl";
 
@@ -24,5 +23,15 @@ export const addHistoryAPI= async(history)=>{
     return await commonAPI(`${serverURL}/history`,"POST",history)
 }
 
+
+
 // get history API
+
+export const getHistoryAPI=async ()=>{
+    return await commonAPI(`${serverURL}/history`,"GET")
+}
 //delete from history API
+
+export const deleteHistoryAPI=async (id)=>{
+    return await commonAPI(`${serverURL}/history/${id}`,"DELETE")
+}
