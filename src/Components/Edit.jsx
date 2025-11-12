@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { ImCancelCircle } from "react-icons/im";
+import { updateResumeAPI } from "../services/AllAPI";
+
 
 const style = {
   position: "absolute",
@@ -47,6 +49,25 @@ function Edit({ resumeData, setResumeData }) {
       userSkills: resumeData.userSkills.filter((item) => item != skill),
     });
   };
+
+  const handleUpdateResume = async ()=>{
+    const {id,username,jobtitle,userLocation}=resumeData
+    if(!username || !jobtitle || !userLocation){
+      alert("Please fill the form completely")
+    }else{
+      console.log("API Call!!");
+      try{
+        const result= await updateResumeAPI(id,resumeData)
+        console.log(result);
+        if(result.status==200){
+          alert("Resume updated successfully")
+          handleClose()
+        }       
+      }catch(err){
+        console.log(err);
+      }
+    }
+  }
 
   return (
     <div>
@@ -295,7 +316,7 @@ function Edit({ resumeData, setResumeData }) {
                 ></TextField>
               </div>
             </div>
-            <div className="d-flex justify-content-center"><button className="btn btn-warning ">Update</button></div>
+            <div className="d-flex justify-content-center"><button onClick={handleUpdateResume} className="btn btn-primary ">Update</button></div>
           </Box>
         </Box>
       </Modal>

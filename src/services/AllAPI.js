@@ -1,3 +1,4 @@
+import { AiFillPrinter } from "react-icons/ai";
 import commonAPI from "./commonAPI";
 import serverURL from "./serverurl";
 
@@ -12,9 +13,16 @@ export const getResumeAPI=async (id)=>{
     return await commonAPI(`${serverURL}/resumes/${id}`,"GET")
 }
 
-export const editResumeAPI=async (id,resume)=>{
-    return await commonAPI(`${serverURL}/resumes/${id}`,"GET",resume)
+//update resume API-PUT
+export const updateResumeAPI=async (id,resume)=>{
+    return await commonAPI(`${serverURL}/resumes/${id}`,"PUT",resume)
 }
-//update resume API-
+
 //add resume to history API
+
+export const addHistoryAPI= async(history)=>{
+    return await commonAPI(`${serverURL}/history`,"POST",history)
+}
+
+// get history API
 //delete from history API

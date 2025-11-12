@@ -33,9 +33,9 @@ function LandingPage() {
       <div className="d-flex justify-content-evenly my-5" style={{marginBottom:"50px"}}>
         <div className="w-50">
           <h2 className='my-4'>Trusted by professionals worldwide.</h2> 
-          <p className='fs-5 my-1'>At LiveCareer, we don't just help you create résumés — we help you land the job. Whether you're a seasoned professional or just starting out, our tools are designed to get results.</p>
+          <p className='fs-5 my-1'>At CareerCraft, we don't just help you create résumés — we help you land the job. Whether you're a seasoned professional or just starting out, our tools are designed to get results.</p>
           <br />
-          <p className='fs-5 my-1'>In fact, users who used LiveCareer reported getting hired an average of 48 days faster.</p>
+          <p className='fs-5 my-1'>In fact, users who used CareerCraft reported getting hired an average of 48 days faster.</p>
           <br />
           <p className='fs-5 my-2'>Join thousands of job-seekers who’ve fast-tracked their careers with a résumé that truly stands out.</p>
           </div>

@@ -13,7 +13,7 @@ function Footer() {
         <h5><CiMail /> Careercraft@gmail.com</h5>
         <h5><FaPhoneAlt /> 9633033031</h5>
         <h4>Connect With Us</h4>
-        <div className='fs-2 d-flex gap-2'>
+        <div className='fs-2 d-flex gap-2 my-2'>
           <FaWhatsapp />
           <CiInstagram />
           <CiFacebook />
