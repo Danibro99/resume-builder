@@ -1,5 +1,5 @@
 import commonAPI from "./commonAPI";
-import serverURL from "./serverurl";
+import serverURL from "./ServerURL";
 
 //add resume API-POST
 export const addResumeAPI= async(resume)=>{
